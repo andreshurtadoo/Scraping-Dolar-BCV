@@ -17,10 +17,15 @@ axios.get(URL, {httpsAgent})
         const $ = cheerio.load(html)
         $('#dolar', html).each(function() {
             const dolar = $(this).find('strong').text()
-            console.log(dolar);
+            console.log(`El precio del dolar es: ${dolar}`);
         })
     })
 
+app.get('/', (req, res) => {
+    res.send(
+        '<h1>Welcome</h1>'
+    )
+})
 
 app.listen(PORT, () => {
     console.log(`
